@@ -73,3 +73,6 @@ end
 
 # Add rubocop gem
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# devise authentication gem
+gem 'devise'
