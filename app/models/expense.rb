@@ -1,4 +1,4 @@
-class Entity < ApplicationRecord
+class Expense < ApplicationRecord
   belongs_to :user, foreign_key: 'author_id'
   has_many :groups, foreign_key: :Entity_id, dependent: :destroy
 
