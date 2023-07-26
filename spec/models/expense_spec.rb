@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
   before :each do
-    @user = User.create(name: 'Lumbuye', email: 'test@g.com', password: '123456')
+    @user = User.create(name: 'Salomon', email: 'test@g.com', password: '123456')
   end
   it 'is valid with valid attributes' do
     expense = Expense.new(name: 'food', amount: 30, author_id: @user.id)
