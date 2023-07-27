@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
       user.permit(:name, :email, :password, :password_confirmation)
     end
   end
+
+  def authenticate_user!
+    if user_signed_in? || (devise_controller? && action_name == 'new')
+      super
+    else
+      redirect_to splash_screen_path
+    end
+  end
 end
