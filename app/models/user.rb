@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :groups, foreign_key: :user_id, dependent: :destroy
 
   validates :name, presence: true
+  def configure_devise_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
 end
