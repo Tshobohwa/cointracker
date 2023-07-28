@@ -1,4 +1,4 @@
-class CathegoryController < ApplicationController
+class CategoryController < ApplicationController
   def index
     @cathegories = Cathegory.where({ author_id: current_user.id })
   end
