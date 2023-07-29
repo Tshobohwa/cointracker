@@ -1,1 +1,19 @@
 <h1>Categories page</h1>
+<% @categories.each do |category| %>
+    <div class="category-container">
+        <div class="category-image-container">
+            <img src=<%= category.icon %> alt=<%= category.name %>>
+        </div>
+        <div class="category-details">
+            <%= link_to category.name , category_expenses_path(category.id) %>
+        </div>
+        <% total_amount = 0
+            category.expenses.each do |expense|
+                total_amount += expense.amount
+            end
+        %>
+        <h2> total <%= total_amount %></h2>
+    </div>
+<% end %>
+
+<%= link_to 'ADD CATEGORY', new_category_path %>

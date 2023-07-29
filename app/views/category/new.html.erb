@@ -1,0 +1,5 @@
+<%= form_with class: 'post-form', model: @category, url: { action: "create" }, method: :post do |f| %>
+    <%= f.text_field :name, placeholder: 'name', class: 'form-input' %>
+    <%= f.text_field :icon, placeholder: 'icon', class: 'form-input' %>
+    <%= f.submit 'ADD CATEGORY', class: 'form-btn' %>
+<% end %>

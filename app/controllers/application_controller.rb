@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-    if user_signed_in? || (devise_controller? && action_name == 'new')
+    if user_signed_in? || devise_controller?
       super
     else
       redirect_to splash_screen_path
