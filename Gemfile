@@ -81,3 +81,5 @@ gem 'devise'
 
 # cancancan authorization gem
 gem 'cancancan', '~> 1.9'
+
+gem 'rails-controller-testing'
