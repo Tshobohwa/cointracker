@@ -1,4 +1,4 @@
-class CategoryController < ApplicationController
+class CategoriesController < ApplicationController
   def index
     @categories = Category.includes(:expenses).where({ user_id: current_user.id })
   end
@@ -13,7 +13,7 @@ class CategoryController < ApplicationController
     @category = Category.new(name:, icon:, user_id: current_user.id)
 
     if @category.save
-      redirect_to category_index_path, notice: 'Category added successfully'
+      redirect_to categories_path, notice: 'Category added successfully'
     else
       flash.now[:error] = @category.errors.full_messages.to_sentence
       render :new
