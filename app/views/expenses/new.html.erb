@@ -1,0 +1,9 @@
+<%= form_with class: 'post-form', model: @expense, url: { action: "create" }, method: :post do |f| %>
+    <%= f.text_field :name, placeholder: 'name', class: 'form-input' %>
+    <%= f.number_field :amount, placeholder: 'amount', class: 'form-input' %>
+        <div class="form-group mb-3">
+          <%= select_tag "group", options_for_select(@categories.map { |group| [group.name, group.id] }), {prompt:"Select Category", required:true, class:"form-select"}%>
+        </div>
+      </div>
+     <%= f.submit 'ADD EXPENSE', class: 'form-btn' %>
+<% end %>
